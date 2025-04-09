@@ -42,8 +42,7 @@
         <section id="about">
             <h2>Acerca de mi</h2>
             <ul>
-                <li>Soy un estudiante de Desarrollo de software de 7mo semestre
-                <li>
+                <li>Soy un estudiante de Desarrollo de software de 7mo semestre</li>
                 <li>Me gusta leer, jugar videojuegos, tocar el piano, y hacer ejercicio</li>
             </ul>
         </section>
@@ -53,7 +52,7 @@
                 <h2>Formacion</h2>
                 <ul>
                     <li><strong>Bachillerato técnico en Ingeniería de software</strong><br>Centro de Enseñanza Técnica
-                        Industrial (Plantel Colomos) - Guadalajara, Jal. <br> 
+                        Industrial (Plantel Colomos) - Guadalajara, Jal. <br>
                         agosto 2022 a Presente
                     <li>
                 </ul>
@@ -73,12 +72,42 @@
 
         </div>
         <section id="portfolio">
-            <p>Carrusel por agregar</p>
+            
+            <div class="slider">
+                <div class="slides">
+                <img src="src/bd.png" class="slide active">
+                <img src="src/profile.jpg" class="slide">
+                <img src="src/tp.jpg" class="slide">
+                <img src="src/tp.jpg" class="slide">
+            </div>
+            <button class="prev" onclick="cambiarslide(-1)">Anterior</button>
+            <button class="next" onclick="cambiarslide(1)">Siguiente</button>
+        </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 John Doe. All rights reserved.</p>
+        <p>&copy; 2025 Alcachofa. All rights reserved.</p>
     </footer>
 </body>
 
+<script>
+
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    function cambiarslide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (n >= slides.length) { slideIndex = 0 }
+        if (n < 0) { slideIndex = slides.length - 1 }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        slides[slideIndex].classList.add("active");
+    }
+</script>
 </html>
